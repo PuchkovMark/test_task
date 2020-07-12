@@ -131,9 +131,4 @@
   .main-table td {
     border: 1px solid silver;
   }
-  @media screen and (max-width: 700px) {
-    .home {
-      flex-direction: column;
-    }
-  }
 </style>

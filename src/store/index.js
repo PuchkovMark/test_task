@@ -13,22 +13,6 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    subscribe(state, n) {
-      /*let connection = null
-
-      console.log(n)
-      connection = new WebSocket(`wss://stream.binance.com:9443/ws/btcusdt@depth`)
-
-      connection.onopen = function (event) {
-        console.log(event)
-        console.log('Successful')
-      }
-
-      connection.onmessage = function (event) {
-        state.res.push(event.data)
-        console.log("There", state.res)
-      }*/
-    }
   },
   actions: {
     async getCurrency() {
