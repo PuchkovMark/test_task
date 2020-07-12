@@ -54,7 +54,6 @@
   export default {
     name: 'subMain',
     data: () => ({
-      currency: null,
       subCurrency: null,
       arrAsks: [],
       arrBids: [],
@@ -64,7 +63,7 @@
     },
     async created() {
       this.subCurrency = await this.$store.dispatch('subscribeCurrency')
-      console.log(this.subCurrency)
+      console.log(this.subCurrency) // :TODO не возвращает ответ в компонент
     }
   }
 
