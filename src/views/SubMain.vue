@@ -14,7 +14,7 @@
     </div>
 
     <div class="home">
-      <div class="wrap">
+      <div class="wrap" ref="block">
         <table class="main-table">
           <thead>
           <tr>
@@ -23,26 +23,8 @@
             <td><strong>Total</strong></td>
           </tr>
           </thead>
-          <tr v-for="(bid, index) in arrBids" :key="index">
-            <td>{{(bid[0])}}</td>
-            <td>{{Math.floor(bid[1] * 1000) / 1000}}</td>
-            <td>{{(bid[0] * bid[1]).toFixed(3)}}</td>
-          </tr>
-        </table>
-      </div>
-      <div class="wrap">
-        <table class="main-table">
-          <thead>
-          <tr>
-            <td><strong>Amount</strong></td>
-            <td><strong>Price</strong></td>
-            <td><strong>Total</strong></td>
-          </tr>
-          </thead>
-          <tr v-for="(ask, index) in arrAsks" :key="index">
-            <td>{{ask[0]}}</td>
-            <td>{{Math.floor(ask[1] * 1000) / 1000}}</td>
-            <td>{{(ask[0] * ask[1]).toFixed(3)}}</td>
+          <tr v-for="(sub, index) in subCurrency" :key="index">
+            <td colspan="3">{{(sub)}}</td>
           </tr>
         </table>
       </div>
@@ -58,6 +40,14 @@
       arrAsks: [],
       arrBids: [],
     }),
+    watch: {
+      subCurrency: async function (val) {
+        setTimeout(() => {
+          this.$refs.block.scrollTop = this.$refs.block.scrollHeight
+        });
+        console.log('Watcher', val)
+      }
+    },
     mounted() {
 
     },

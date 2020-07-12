@@ -14,7 +14,7 @@ export default new Vuex.Store({
     },
     subscribeCurrency() {
       let connection = null
-      let res;
+      let res = []
 
       connection = new WebSocket("wss://stream.binance.com:9443/ws/bnbbtc@depth")
 
@@ -24,8 +24,8 @@ export default new Vuex.Store({
       }
 
       connection.onmessage = function (event) {
-        res = event.data
-        //console.log(res)
+        res.push(event.data)
+        //console.log("There", res)
       }
       return res
     }
