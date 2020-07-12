@@ -4,7 +4,7 @@
       <form action="#">
         <p>
           <label class="label" for="main-select">Select the element</label>
-          <select id ="main-select" class="select-css">
+          <select id ="main-select" class="select-css" v-model="selectedItem" @change="selectItem">
             <option>BTCUSDT</option>
             <option>BNBBTC</option>
             <option>ETHBTC</option>
@@ -39,21 +39,26 @@
       subCurrency: null,
       arrAsks: [],
       arrBids: [],
+      selectedItem: 'BTCUSDT',
     }),
+    methods: {
+      async selectItem() {
+        const payload = {'val': this.selectedItem.toLowerCase()}
+        this.subCurrency = null
+        this.subCurrency = await this.$store.dispatch('subscribeCurrency', payload)
+      }
+    },
     watch: {
-      subCurrency: async function (val) {
+      subCurrency: function (val) {
         setTimeout(() => {
           this.$refs.block.scrollTop = this.$refs.block.scrollHeight
         });
-        console.log('Watcher', val)
       }
     },
-    mounted() {
-
-    },
-    async created() {
-      this.subCurrency = await this.$store.dispatch('subscribeCurrency')
-      console.log(this.subCurrency) // :TODO не возвращает ответ в компонент
+    async mounted() {
+      // btcusdt   bnbbtc   ethbtc
+      const payload = {'val': 'btcusdt'}
+      this.subCurrency = await this.$store.dispatch('subscribeCurrency', payload)
     }
   }
 
@@ -112,9 +117,9 @@
   .wrap {
     display: flex;
     justify-content: center;
-    height: 100%;
     overflow: hidden;
     margin: 2rem;
+    height: 80vh;
   }
   .wrap:hover {
     overflow: scroll;

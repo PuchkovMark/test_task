@@ -5,18 +5,41 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    res: []
+  },
+  getters: {
+    getRes: state => {
+      return state.res
+    }
   },
   mutations: {
+    subscribe(state, n) {
+      /*let connection = null
+
+      console.log(n)
+      connection = new WebSocket(`wss://stream.binance.com:9443/ws/btcusdt@depth`)
+
+      connection.onopen = function (event) {
+        console.log(event)
+        console.log('Successful')
+      }
+
+      connection.onmessage = function (event) {
+        state.res.push(event.data)
+        console.log("There", state.res)
+      }*/
+    }
   },
   actions: {
     async getCurrency() {
       return (await fetch('https://www.binance.com/api/v1/depth?symbol=BNBBTC&limit=500')).json()
     },
-    subscribeCurrency() {
+    subscribeCurrency({commit}, payload) {
       let connection = null
       let res = []
 
-      connection = new WebSocket("wss://stream.binance.com:9443/ws/bnbbtc@depth")
+      console.log(payload.val)
+      connection = new WebSocket(`wss://stream.binance.com:9443/ws/${payload.val}@depth`)
 
       connection.onopen = function (event) {
         console.log(event)
