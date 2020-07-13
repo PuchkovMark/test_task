@@ -22,6 +22,5 @@
   }
 </script>
 
-<style>
-  @import 'assets/index.css';
+<style lang="scss">
 </style>

@@ -1,13 +1,13 @@
 <template>
     <div>
-        <router-view />
+        <h1>Login page</h1>
     </div>
 </template>
 
 <script>
 
     export default {
-        name: "EmptyLayout"
+        name: "Login",
     }
 </script>
 

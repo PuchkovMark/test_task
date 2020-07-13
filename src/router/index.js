@@ -8,13 +8,13 @@ const routes = [
     path: '/',
     name: 'home',
     meta: {layout: 'main'},
-    component: () => import('../views/Main.vue')
+    component: () => import('../views/Home.vue')
   },
   {
-    path: '/select',
-    name: 'select',
-    meta: {layout: 'main'},
-    component: () => import('../views/SubMain.vue')
+    path: '/login',
+    name: 'login',
+    meta: {layout: 'empty'},
+    component: () => import('../views/Login.vue')
   }
 ]
 
@@ -23,5 +23,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
 
 export default router

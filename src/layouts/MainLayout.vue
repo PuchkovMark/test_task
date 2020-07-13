@@ -1,25 +1,17 @@
 <template>
     <div>
-        <div class="app-main-layout">
-
-            <Header />
-
-            <main class="app-content">
-                <div class="app-page">
-                    <router-view/>
-                </div>
-            </main>
-        </div>
+        <Navbar />
+        <router-view />
     </div>
 </template>
 
 <script>
-    import Header from '../components/Header'
+    import Navbar from '../components/Navbar'
 
     export default {
         name: "MainLayout",
         components: {
-            Header
+            Navbar
         }
     }
 </script>
