@@ -16,10 +16,6 @@ export default new Vuex.Store({
     isLoggedIn: s => s.isLoggedIn
   },
   actions: {
-    async fetchContacts() {
-      const res = await fetch('http://localhost:3000/contacts')
-      return await res.json()
-    },
     login({commit}) {
       commit('setAuth')
     },

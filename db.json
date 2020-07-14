@@ -1,10 +1,60 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "contacts": [
-    { "id": 1, "name": "Maxim", "tel": "+1231212" },
-    { "id": 2, "name": "Roma", "tel": "+42342345" }
+    {
+      "id": 1,
+      "name": "Maxim",
+      "tel": "+56756745"
+    },
+    {
+      "id": 2,
+      "name": "Maxim",
+      "tel": "+234234"
+    },
+    {
+      "name": "Maxim",
+      "tel": "+132423452",
+      "id": 3
+    },
+    {
+      "name": "Maxim",
+      "tel": "+9679867",
+      "id": 4
+    },
+    {
+      "name": "Maxim",
+      "tel": "+234523451",
+      "id": 5
+    },
+    {
+      "name": "Maxim",
+      "tel": "+5675675",
+      "id": 6
+    },
+    {
+      "name": "Maxim",
+      "tel": "+67567567",
+      "id": 7
+    },
+    {
+      "name": "Vadim",
+      "tel": "+123456",
+      "id": 1.359189583717826
+    },
+    {
+      "id": 1.2189110416895264,
+      "name": "Egor",
+      "tel": "+98765"
+    }
   ],
-  "profile": { "email": "t@mail.ru", "password": "12345678" }
+  "profile": {
+    "email": "t@mail.ru",
+    "password": "12345678"
+  }
 }
