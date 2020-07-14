@@ -2,21 +2,26 @@
     <div>
 
         <v-card v-for="(contact, index) in contacts" :key="index" style="margin: 1rem;">
-            <v-card-title>
-                {{contact.name}}: {{contact.tel}}
-                <v-btn icon color="indigo" @click="deleteContact(contact.name, contact.tel)">
-                    <v-icon>mdi-close</v-icon>
-                </v-btn>
-                <v-btn icon color="indigo" @click="selectContacts(contact.name, contact.tel)">
-                    <v-icon>mdi-pencil</v-icon>
-                </v-btn>
+            <v-card-title style="display: flex; justify-content: space-between">
+                <div>
+                    {{contact.name}}: {{contact.tel}}
+                </div>
+
+                <div>
+                    <v-btn icon color="indigo" @click="deleteContact(contact.name, contact.tel)">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                    <v-btn icon color="indigo" @click="selectContacts(contact.name, contact.tel)">
+                        <v-icon>mdi-pencil</v-icon>
+                    </v-btn>
+                </div>
             </v-card-title>
         </v-card>
-      <v-col cols="12" style="display: flex; justify-content: center;">
-        <v-btn class="mx-2" fab dark color="indigo" @click="addAnyContact">
-          <v-icon>mdi-plus</v-icon>
-        </v-btn>
-      </v-col>
+        <v-col cols="12" style="display: flex; justify-content: center;">
+            <v-btn class="mx-2" fab dark color="indigo" @click="addAnyContact">
+                <v-icon>mdi-plus</v-icon>
+            </v-btn>
+        </v-col>
 
         <v-overlay
                 absolute
@@ -26,7 +31,8 @@
         >
             <v-card>
                 <v-card-title>
-                    <v-text-field v-model="selectedName" solo style="margin: 1rem" hide-details clearable></v-text-field>
+                    <v-text-field v-model="selectedName" solo style="margin: 1rem" hide-details
+                                  clearable></v-text-field>
                     :
                     <v-text-field v-model="selectedTel" solo style="margin: 1rem" hide-details clearable></v-text-field>
                     <v-btn icon color="green" @click="updateContact">
@@ -48,7 +54,8 @@
         >
             <v-card>
                 <v-card-title>
-                    <v-text-field v-model="selectedName" solo style="margin: 1rem" hide-details clearable></v-text-field>
+                    <v-text-field v-model="selectedName" solo style="margin: 1rem" hide-details
+                                  clearable></v-text-field>
                     :
                     <v-text-field v-model="selectedTel" solo style="margin: 1rem" hide-details clearable></v-text-field>
                     <v-btn icon color="green" @click="addContact">
@@ -109,7 +116,7 @@
                 this.contacts = await (await fetch('http://localhost:3000/contacts')).json()
                 this.selectedName = null
                 this.selectedTel = null
-                this.overlayUpdate= false
+                this.overlayUpdate = false
             },
             addAnyContact() {
                 this.overlayAdd = true
