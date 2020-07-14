@@ -1,0 +1,10 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "contacts": [
+    { "id": 1, "name": "Maxim", "tel": "+1231212" },
+    { "id": 2, "name": "Roma", "tel": "+42342345" }
+  ],
+  "profile": { "email": "t@mail.ru", "password": "12345678" }
+}

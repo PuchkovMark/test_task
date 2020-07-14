@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <component :is="layout">  <!--generick component -->
-      <router-view/>
-    </component>
+    <v-app>
+      <component :is="layout">  <!--generick component -->
+        <router-view/>
+      </component>
+    </v-app>
   </div>
 </template>
 
@@ -23,4 +25,5 @@
 </script>
 
 <style lang="scss">
+  @import 'assets/index.css';
 </style>

@@ -5,10 +5,28 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    isLoggedIn: false
   },
   mutations: {
+    setAuth(state) {
+      state.isLoggedIn = true
+    }
+  },
+  getters: {
+    isLoggedIn: s => s.isLoggedIn
   },
   actions: {
+    async fetchContacts() {
+      const res = await fetch('http://localhost:3000/contacts')
+      return await res.json()
+    },
+    login({commit}) {
+      commit('setAuth')
+    },
+    async fetchData() {
+      const res = await fetch('http://localhost:3000/profile')
+      return await res.json()
+    }
   },
   modules: {
   }

@@ -1,7 +1,12 @@
 <template>
     <div>
         <Navbar />
-        <router-view />
+
+        <v-row>
+            <v-col cols="12" style="display: flex; justify-content: center;">
+                <router-view />
+            </v-col>
+        </v-row>
     </div>
 </template>
 
